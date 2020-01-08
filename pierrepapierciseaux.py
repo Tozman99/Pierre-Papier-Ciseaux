@@ -4,6 +4,13 @@ class Joueur:
     def __init__(self, nom, score):
         self.nom = nom
         self.score = score
+ 
+score_J1, score_ordi = 0, 0
+nom = input('Quelle est votre nom ? ')
+choix_joueur = ['Pierre', 'Papier', 'Ciseaux']
+ordinateur = Joueur('ordi', score_ordi)
+# ['Ciseaux', 'Papier', 'Pierre']
+renverser = True
 
 def valeur_reverse(choix_J1, choix_ordi, renverser):
     if renverser is False and choix_J1 == 'Pierre':
@@ -11,14 +18,7 @@ def valeur_reverse(choix_J1, choix_ordi, renverser):
     elif renverser is False and choix_J1 == 'Ciseaux':
         return 2
     return choix_ordi
-    
-score_J1, score_ordi = 0, 0
-nom = input('Quelle est votre nom ? ')
-choix_joueur = ['Pierre', 'Papier', 'Ciseaux']
-choix_joueur_2 = reversed(choix_joueur)
-ordinateur = Joueur('ordi', score_ordi)
-# ['Ciseaux', 'Papier', 'Pierre']
-renverser = True
+
 while score_J1 < 5 and score_ordi < 5:
     choix_ordi = random.choice([0, len(choix_joueur) - 1])
     print(choix_ordi)
